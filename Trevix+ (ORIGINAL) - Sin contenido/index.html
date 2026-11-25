@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- =========================
+         CONFIGURACIÓN
+         ========================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trevix+ | Cine argentino</title>
+
+
+    <!-- =========================
+         GOOGLE FONTS
+         ========================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Google+Sans+Text:wght@400;500;600;700&family=Google+Sans+Flex:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================
+         ICONOS
+         ========================= -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================
+         ESTILOS
+         ========================= -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+     CUENTA / AUTENTICACIÓN
+     ========================= -->
+<section
+    class="account-screen"
+    id="accountScreen"
+    aria-labelledby="accountTitle"
+    hidden
+>
+
+    <div class="account-container">
+
+        <div class="account-header">
+
+            <img
+                src="assets/images/trevix-logo.png"
+                alt="Trevix+"
+                class="account-logo"
+            >
+
+            <span class="eyebrow">
+                TREVIX+
+            </span>
+
+            <h1 id="accountTitle">
+                Tu entretenimiento,
+                en un solo lugar.
+            </h1>
+
+            <p id="accountSubtitle">
+                Creá una cuenta o iniciá sesión
+                para continuar.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             INICIO DE CUENTA
+             ========================= -->
+
+        <div
+            class="account-view"
+            id="accountWelcomeView"
+        >
+
+            <button
+                type="button"
+                class="account-primary-button"
+                id="openRegisterButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    person_add
+                </span>
+
+                <span>Registrarse</span>
+            </button>
+
+
+            <button
+                type="button"
+                class="account-secondary-button"
+                id="openLoginButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    login
+                </span>
+
+                <span>Iniciar sesión</span>
+            </button>
+
+
+            <button
+                type="button"
+                class="account-recovery-link"
+                id="openRecoveryButton"
+            >
+                ¿Olvidaste tu usuario o contraseña?
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             REGISTRO
+             ========================= -->
+
+        <div
+            class="account-view"
+            id="registerView"
+            hidden
+        >
+
+            <div class="account-form-header">
+
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    person_add
+                </span>
+
+                <h2>
+                    Crear cuenta
+                </h2>
+
+                <p>
+                    Completá tus datos para comenzar
+                    a usar Trevix+.
+                </p>
+
+            </div>
+
+
+            <label class="account-field">
+
+                <span>
+                    Nombre de usuario
+                </span>
+
+                <input
+                    type="text"
+                    id="registerUsername"
+                    maxlength="20"
+                    autocomplete="username"
+                    placeholder="Ej. tomi"
+                >
+
+            </label>
+
+
+            <label class="account-field">
+
+                <span>
+                    Contraseña
+                </span>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    maxlength="64"
+                    autocomplete="new-password"
+                    placeholder="Elegí una contraseña"
+                >
+
+            </label>
+
+
+            <label class="account-field">
+
+                <span>
+                    Repetir contraseña
+                </span>
+
+                <input
+                    type="password"
+                    id="registerPasswordConfirm"
+                    maxlength="64"
+                    autocomplete="new-password"
+                    placeholder="Repetí tu contraseña"
+                >
+
+            </label>
+
+
+            <p
+                class="account-form-error"
+                id="registerError"
+                hidden
+            ></p>
+
+
+            <button
+                type="button"
+                class="account-primary-button"
+                id="registerButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    person_add
+                </span>
+
+                <span>Crear cuenta</span>
+            </button>
+
+
+            <button
+                type="button"
+                class="account-back-button"
+                id="registerBackButton"
+            >
+                ← Volver
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             INICIO DE SESIÓN
+             ========================= -->
+
+        <div
+            class="account-view"
+            id="loginView"
+            hidden
+        >
+
+            <div class="account-form-header">
+
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    login
+                </span>
+
+                <h2>
+                    Iniciar sesión
+                </h2>
+
+                <p>
+                    Ingresá a tu cuenta de Trevix+.
+                </p>
+
+            </div>
+
+
+            <label class="account-field">
+
+                <span>
+                    Nombre de usuario
+                </span>
+
+                <input
+                    type="text"
+                    id="loginUsername"
+                    maxlength="20"
+                    autocomplete="username"
+                    placeholder="Tu usuario"
+                >
+
+            </label>
+
+
+            <label class="account-field">
+
+                <span>
+                    Contraseña
+                </span>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    maxlength="64"
+                    autocomplete="current-password"
+                    placeholder="Tu contraseña"
+                >
+
+            </label>
+
+
+            <p
+                class="account-form-error"
+                id="loginError"
+                hidden
+            ></p>
+
+
+            <button
+                type="button"
+                class="account-primary-button"
+                id="loginButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    login
+                </span>
+
+                <span>Iniciar sesión</span>
+            </button>
+
+
+            <button
+                type="button"
+                class="account-recovery-link"
+                id="loginRecoveryButton"
+            >
+                ¿Olvidaste tu usuario o contraseña?
+            </button>
+
+
+            <button
+                type="button"
+                class="account-back-button"
+                id="loginBackButton"
+            >
+                ← Volver
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             RECUPERACIÓN
+             ========================= -->
+
+        <div
+            class="account-view"
+            id="recoveryView"
+            hidden
+        >
+
+            <div class="account-form-header">
+
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    key
+                </span>
+
+                <h2>
+                    Recuperar cuenta
+                </h2>
+
+                <p>
+                    Usá uno de tus códigos de recuperación
+                    para recuperar el acceso.
+                </p>
+
+            </div>
+
+
+            <label class="account-field">
+
+                <span>
+                    Código de recuperación
+                </span>
+
+                <input
+                    type="text"
+                    id="recoveryCode"
+                    maxlength="9"
+                    autocomplete="off"
+                    placeholder="XXXX-XXXX"
+                >
+
+            </label>
+
+
+            <p
+                class="account-form-error"
+                id="recoveryError"
+                hidden
+            ></p>
+
+
+            <button
+                type="button"
+                class="account-primary-button"
+                id="recoveryButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    key
+                </span>
+
+                <span>Continuar</span>
+            </button>
+
+
+            <button
+                type="button"
+                class="account-back-button"
+                id="recoveryBackButton"
+            >
+                ← Volver
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             CÓDIGOS DE RECUPERACIÓN
+             ========================= -->
+        <div
+    class="account-view"
+    id="recoveryResetView"
+    hidden
+>
+    <div class="account-form-header">
+
+        <span
+            class="material-symbols-rounded"
+            aria-hidden="true"
+        >
+            lock_reset
+        </span>
+
+        <h2>Recuperar cuenta</h2>
+
+        <p>
+            Cuenta encontrada: <strong id="recoveredUsername"></strong>
+        </p>
+
+    </div>
+
+    <label class="account-field">
+        <span>Nueva contraseña</span>
+
+        <input
+            type="password"
+            id="recoveryNewPassword"
+            maxlength="64"
+            autocomplete="new-password"
+            placeholder="Elegí una nueva contraseña"
+        >
+    </label>
+
+    <label class="account-field">
+        <span>Repetir contraseña</span>
+
+        <input
+            type="password"
+            id="recoveryNewPasswordConfirm"
+            maxlength="64"
+            autocomplete="new-password"
+            placeholder="Repetí tu contraseña"
+        >
+    </label>
+
+    <p
+        class="account-form-error"
+        id="recoveryResetError"
+        hidden
+    ></p>
+
+    <button
+        type="button"
+        class="account-primary-button"
+        id="resetPasswordButton"
+    >
+        <span
+            class="material-symbols-rounded"
+            aria-hidden="true"
+        >
+            lock_reset
+        </span>
+
+        <span>Restablecer contraseña</span>
+    </button>
+
+    <button
+        type="button"
+        class="account-back-button"
+        id="recoveryResetBackButton"
+    >
+        ← Volver
+    </button>
+
+</div>
+
+
+        <div
+            class="account-view"
+            id="recoveryCodesView"
+            hidden
+        >
+
+            <div class="account-form-header">
+
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    verified_user
+                </span>
+
+                <h2>
+                    ¡Cuenta creada! 🎉
+                </h2>
+
+                <p>
+                    Guardá estos códigos en un lugar seguro.
+                    Cada código puede utilizarse una sola vez.
+                </p>
+
+            </div>
+
+
+            <div
+                class="recovery-codes"
+                id="recoveryCodes"
+            ></div>
+
+
+            <p class="recovery-warning">
+                ⚠️ Trevix+ no podrá volver a mostrar estos
+                códigos completos después de salir de esta pantalla.
+            </p>
+
+
+            <button
+                type="button"
+                class="account-primary-button"
+                id="continueAfterRegisterButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    arrow_forward
+                </span>
+
+                <span>Continuar</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- =========================
+         BARRA DE NAVEGACIÓN
+         ========================= -->
+    <header class="navbar">
+
+        <a
+            href="#inicio"
+            class="logo"
+            aria-label="Trevix+ - Inicio"
+        >
+            <img
+                src="assets/images/trevix-logo.png"
+                alt="Trevix+"
+            >
+        </a>
+
+
+        <nav
+    class="main-nav"
+    aria-label="Navegación principal"
+>
+    <a
+        href="#inicio"
+        class="nav-link"
+    >
+        <span
+            class="material-symbols-rounded"
+            aria-hidden="true"
+        >
+            home
+        </span>
+
+        <span>Inicio</span>
+    </a>
+
+
+    <a
+        href="#catalogo"
+        class="nav-link"
+    >
+        <span
+            class="material-symbols-rounded"
+            aria-hidden="true"
+        >
+            movie
+        </span>
+
+        <span>Películas</span>
+    </a>
+
+
+    <a
+        href="#busqueda"
+        class="nav-link"
+    >
+        <span
+            class="material-symbols-rounded"
+            aria-hidden="true"
+        >
+            search
+        </span>
+
+        <span>Buscar</span>
+    </a>
+
+
+    <!-- PERFIL ACTIVO -->
+    <div class="nav-profile">
+        <button
+            type="button"
+            class="nav-profile-button"
+            id="navProfileButton"
+            aria-label="Abrir menú del perfil"
+            aria-expanded="false"
+        >
+            <span
+                class="nav-profile-avatar"
+                id="navProfileAvatar"
+                aria-hidden="true"
+            >
+                🦊
+            </span>
+
+            <span
+                class="nav-profile-name"
+                id="navProfileName"
+            >
+                Principal
+            </span>
+
+            <span
+                class="material-symbols-rounded nav-profile-arrow"
+                aria-hidden="true"
+            >
+                expand_more
+            </span>
+        </button>
+
+        <!-- MENÚ DEL PERFIL -->
+        <div
+            class="nav-profile-menu"
+            id="navProfileMenu"
+            hidden
+        >
+            <button
+                type="button"
+                class="nav-profile-menu-item"
+                id="navEditProfileButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    edit
+                </span>
+
+                <span>Editar perfil</span>
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-profile-menu-item"
+                id="navChangeAccountButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    switch_account
+                </span>
+
+                <span>Cambiar de cuenta</span>
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-profile-menu-item nav-profile-logout"
+                id="navLogoutButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    logout
+                </span>
+
+                <span>Cerrar sesión</span>
+            </button>
+        </div>
+    </div>
+
+</nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+         ========================= -->
+    <main>
+
+
+        <!-- =========================
+             INICIO / HERO
+             ========================= -->
+        <section
+            class="hero"
+            id="inicio"
+        >
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    CINE ARGENTINO
+                </span>
+
+                <h1>
+                    Historias que nos unen.
+                </h1>
+
+                <p>
+                    Descubrí películas y series argentinas
+                    en Trevix+.
+                </p>
+
+                <button id="exploreButton">
+                    Explorar catálogo
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BÚSQUEDA
+             ========================= -->
+        <section
+            class="search-section"
+            id="busqueda"
+            aria-labelledby="searchHeading"
+        >
+
+            <div class="search-content">
+
+
+                <!-- Encabezado de búsqueda -->
+                <div class="search-heading">
+
+                    <span class="eyebrow">
+                        ENCONTRÁ TU PRÓXIMA HISTORIA
+                    </span>
+
+                    <h2 id="searchHeading">
+                        Explorá Trevix+
+                    </h2>
+
+                    <p>
+                        Buscá películas y series por título,
+                        género o país.
+                    </p>
+
+                </div>
+
+
+                <!-- Campo de búsqueda -->
+                <label
+                    class="search-box"
+                    for="searchInput"
+                >
+
+                    <span
+                        class="material-symbols-rounded"
+                        aria-hidden="true"
+                    >
+                        search
+                    </span>
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Buscar películas, series, géneros..."
+                        autocomplete="off"
+                    >
+
+                </label>
+
+
+                <!-- Filtros -->
+                <div class="search-filters">
+
+
+                    <!-- Tipo de contenido -->
+                    <label class="filter-field">
+
+                        <span>
+                            Tipo de contenido
+                        </span>
+
+                        <select id="typeFilter">
+
+                            <option value="all">
+                                Todo el contenido
+                            </option>
+
+                            <option value="movie">
+                                Películas
+                            </option>
+
+                            <option value="series">
+                                Series
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                    <!-- Público -->
+                    <label class="filter-field">
+
+                        <span>
+                            Público
+                        </span>
+
+                        <select id="audienceFilter">
+
+                            <option value="all">
+                                Todas las edades
+                            </option>
+
+                            <option value="infantil">
+                                Infantil
+                            </option>
+
+                            <option value="adolescentes">
+                                Adolescentes
+                            </option>
+
+                            <option value="adultos">
+                                Adultos
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Mensaje de búsqueda -->
+                <p
+                    id="searchMessage"
+                    class="search-message"
+                    aria-live="polite"
+                    hidden
+                ></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FICHA DEL CONTENIDO
+             ========================= -->
+        <section
+            class="movie-details"
+            id="movieDetails"
+            hidden
+        >
+
+            <div class="details-content">
+
+                <span
+                    class="eyebrow"
+                    id="detailEyebrow"
+                >
+                    TREVIX+ ORIGINAL
+                </span>
+
+                <h1 id="detailTitle"></h1>
+
+                <div
+                    class="movie-meta"
+                    id="detailMeta"
+                ></div>
+
+                <p
+                    class="details-description"
+                    id="detailDescription"
+                ></p>
+
+
+                <!-- Acciones -->
+                <div class="details-actions">
+
+                    <button id="watchButton">
+                        ▶ Ver película
+                    </button>
+
+                    <button
+                        class="secondary-button"
+                        id="backButton"
+                    >
+                        ← Volver al catálogo
+                    </button>
+
+                </div>
+
+            </div>
+
+                 <!-- =========================
+     EPISODIOS DE LA SERIE
+     ========================= -->
+<div
+    class="series-episodes"
+    id="seriesEpisodes"
+    hidden
+>
+
+    <div class="series-episodes-header">
+
+        <span class="eyebrow">
+            EPISODIOS
+        </span>
+
+        <h2>
+            Temporada 1
+        </h2>
+
+    </div>
+
+    <div
+        class="episode-list"
+        id="episodeList"
+    ></div>
+
+</div>
+
+        </section>
+
+
+        <!-- =========================
+     CATÁLOGO
+     ========================= -->
+<section
+    class="catalog"
+    id="catalogo"
+    aria-labelledby="catalogTitle"
+>
+
+    <div class="catalog-header">
+
+        <div class="catalog-heading">
+
+            <span class="eyebrow">
+                DESCUBRÍ TREVIX+
+            </span>
+
+            <h2 id="catalogTitle">
+                Películas destacadas
+            </h2>
+
+            <p>
+                Descubrí historias argentinas para disfrutar
+                cuando quieras.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="movie-grid"
+        id="movieGrid"
+        aria-live="polite"
+    ></div>
+
+</section>
+    </main>
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+         ========================= -->
+    <footer>
+
+        <p>
+            © 2026 Trevix+ · Proyecto de cine argentino
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         REPRODUCTOR
+         ========================= -->
+    <section
+        class="player-overlay"
+        id="playerOverlay"
+        aria-label="Reproductor de película"
+        hidden
+    >
+
+        <div
+            class="player-screen"
+            id="playerScreen"
+        >
+
+
+            <!-- Video -->
+            <video
+                id="videoPlayer"
+                playsinline
+                preload="metadata"
+            >
+                Tu navegador no admite reproducción de video.
+            </video>
+
+
+            <!-- Cabecera del reproductor -->
+            <header class="player-header">
+
+                <button
+                    class="player-close"
+                    id="closePlayer"
+                    aria-label="Salir de la película"
+                    title="Salir de la película"
+                >
+
+                    <span class="material-symbols-rounded">
+                        close
+                    </span>
+
+                </button>
+
+
+                <h2 id="playerTitle">
+                    Título de la película
+                </h2>
+
+            </header>
+
+
+            <!-- Botón central -->
+            <div class="player-center">
+
+                <button
+                    id="playPauseButton"
+                    class="player-main-button"
+                    aria-label="Reproducir"
+                    title="Reproducir"
+                >
+
+                    <span class="material-symbols-rounded">
+                        play_arrow
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- Controles -->
+            <div class="player-controls">
+
+
+                <!-- Línea de tiempo -->
+                <div class="player-timeline">
+
+                    <input
+                        id="playerProgress"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="0"
+                        step="0.1"
+                        aria-label="Progreso de la película"
+                    >
+
+                    <span id="timeRemaining">
+                        -0:00
+                    </span>
+
+                </div>
+
+
+                <!-- Controles inferiores -->
+                <div class="player-bottom">
+
+
+                    <!-- Controles de reproducción -->
+                    <div class="player-left-controls">
+
+
+                        <!-- Reproducir / Pausar -->
+                        <button
+                            id="bottomPlayPause"
+                            aria-label="Reproducir"
+                            title="Reproducir"
+                        >
+
+                            <span class="material-symbols-rounded">
+                                play_arrow
+                            </span>
+
+                        </button>
+
+
+                        <!-- Retroceder -->
+                        <button
+                            id="rewindButton"
+                            aria-label="Retroceder 5 segundos"
+                            title="Retroceder 5 segundos"
+                        >
+
+                            <span class="material-symbols-rounded">
+                                replay_5
+                            </span>
+
+                        </button>
+
+
+                        <!-- Adelantar -->
+                        <button
+                            id="forwardButton"
+                            aria-label="Adelantar 5 segundos"
+                            title="Adelantar 5 segundos"
+                        >
+
+                            <span class="material-symbols-rounded">
+                                forward_5
+                            </span>
+
+                        </button>
+
+
+                        <!-- Silenciar -->
+                        <button
+                            id="muteButton"
+                            aria-label="Silenciar"
+                            title="Silenciar"
+                        >
+
+                            <span class="material-symbols-rounded">
+                                volume_up
+                            </span>
+
+                        </button>
+
+
+                        <!-- Volumen -->
+                        <input
+                            id="volumeControl"
+                            type="range"
+                            min="0"
+                            max="1"
+                            step="0.05"
+                            value="1"
+                            aria-label="Volumen"
+                            title="Volumen"
+                        >
+
+                    </div>
+
+
+                    <!-- Pantalla completa -->
+                    <button
+                        id="fullscreenButton"
+                        aria-label="Entrar en pantalla completa"
+                        title="Entrar en pantalla completa"
+                    >
+
+                        <span class="material-symbols-rounded">
+                            fullscreen
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+<!-- =========================
+     SELECTOR DE PERFILES
+     ========================= -->
+<section
+    class="profile-screen"
+    id="profileScreen"
+    aria-labelledby="profileTitle"
+>
+
+    <div class="profile-container">
+
+        <div class="profile-header">
+
+            <img
+                src="assets/images/trevix-logo.png"
+                alt="Trevix+"
+                class="profile-logo"
+            >
+
+            <span class="eyebrow">
+                ¡Bienvenido a Trevix+!
+            </span>
+
+            <h1 id="profileTitle">
+                ¿Quién está viendo?
+            </h1>
+
+            <p>
+                Elegí tu perfil para continuar.
+            </p>
+
+        </div>
+
+
+        <!-- Perfiles -->
+        <div
+            class="profiles-grid"
+            id="profilesGrid"
+        ></div>
+
+  
+       <!-- MENÚ CONTEXTUAL DE PERFIL -->
+<div class="profile-context-menu" id="profileContextMenu" hidden>
+  <button type="button" id="editProfileOption">
+    <span class="material-symbols-rounded" aria-hidden="true">edit</span>
+    <span>Editar perfil</span>
+  </button>
+
+  <button type="button" id="deleteProfileOption" class="danger">
+    <span class="material-symbols-rounded" aria-hidden="true">delete</span>
+    <span>Borrar perfil</span>
+  </button>
+
+  <button type="button" id="pinProfileOption">
+    <span class="material-symbols-rounded" aria-hidden="true">lock</span>
+    <span>Cambiar o quitar PIN</span>
+  </button>
+
+</div>
+
+  <!-- MODAL EDITAR PERFIL -->
+<div class="profile-edit-modal" id="profileEditModal" hidden>
+    <div class="profile-edit-box">
+
+        <div class="profile-modal-header">
+            <span class="material-symbols-rounded" aria-hidden="true">
+                edit
+            </span>
+
+            <h2>Editar perfil</h2>
+
+            <p>
+                Cambiá el nombre o avatar de este perfil.
+            </p>
+        </div>
+
+
+        <!-- AVATAR ACTUAL -->
+
+        <div class="profile-edit-preview">
+            <span
+                class="profile-edit-avatar"
+                id="editProfilePreview"
+            >
+                🦊
+            </span>
+        </div>
+
+
+        <!-- AVATARES -->
+
+        <div class="profile-field">
+
+            <label>
+                Elegí un avatar
+            </label>
+
+            <div
+                class="avatar-options edit-avatar-options"
+                id="editAvatarOptions"
+            ></div>
+
+        </div>
+
+
+        <!-- NOMBRE -->
+
+        <div class="profile-field">
+
+            <label for="editProfileNameInput">
+                Nombre del perfil
+            </label>
+
+            <input
+                type="text"
+                id="editProfileNameInput"
+                maxlength="20"
+                autocomplete="off"
+                placeholder="Nombre del perfil"
+            >
+
+        </div>
+
+
+        <p
+            class="profile-form-error"
+            id="editProfileFormError"
+            hidden
+        ></p>
+
+
+        <!-- BOTONES -->
+
+        <div class="profile-edit-actions">
+
+            <button
+                type="button"
+                class="profile-secondary-button"
+                id="closeEditProfileButton"
+            >
+                Cancelar
+            </button>
+
+            <button
+                type="button"
+                class="profile-primary-button"
+                id="saveEditProfileButton"
+            >
+                Guardar cambios
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- MODAL BORRAR PERFIL -->
+<div
+    class="profile-delete-modal"
+    id="profileDeleteModal"
+    hidden
+>
+    <div class="profile-delete-box">
+
+        <div class="profile-delete-header">
+
+            <span
+                class="material-symbols-rounded profile-delete-icon"
+                aria-hidden="true"
+            >
+                delete
+            </span>
+
+            <h2 id="deleteProfileTitle">
+                Borrar perfil
+            </h2>
+
+            <p>
+                🗑️ ¿Estás seguro de eliminar este perfil?
+                Todos los datos serán borrados y no se podrán recuperar.
+            </p>
+
+        </div>
+
+
+        <div class="profile-delete-actions">
+
+            <button
+                type="button"
+                class="profile-delete-cancel"
+                id="cancelDeleteProfileButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    close
+                </span>
+
+                <span>Cancelar</span>
+            </button>
+
+
+            <button
+                type="button"
+                class="profile-delete-confirm"
+                id="confirmDeleteProfileButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    delete
+                </span>
+
+                <span>Aceptar</span>
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================
+     MODAL GESTIONAR PIN
+     ========================= -->
+<div
+    class="profile-pin-manage-modal"
+    id="profilePinManageModal"
+    hidden
+>
+    <div class="profile-pin-manage-box">
+
+        <div class="profile-modal-header">
+
+            <span
+                class="material-symbols-rounded"
+                id="pinManageIcon"
+                aria-hidden="true"
+            >
+                lock
+            </span>
+
+            <h2 id="pinManageTitle">
+                Gestionar PIN
+            </h2>
+
+            <p id="pinManageDescription">
+                Protegé este perfil con un PIN de 4 dígitos.
+            </p>
+
+        </div>
+
+
+        <!-- PIN ACTUAL -->
+
+        <div
+            class="profile-field"
+            id="currentPinField"
+            hidden
+        >
+
+            <label for="currentProfilePin">
+                PIN actual
+            </label>
+
+            <input
+                id="currentProfilePin"
+                type="password"
+                inputmode="numeric"
+                maxlength="4"
+                autocomplete="off"
+                placeholder="4 dígitos"
+            >
+
+        </div>
+
+
+        <!-- NUEVO PIN -->
+
+        <div
+            class="profile-field"
+            id="newPinField"
+        >
+
+            <label for="manageNewProfilePin">
+                Nuevo PIN
+            </label>
+
+            <input
+                id="manageNewProfilePin"
+                type="password"
+                inputmode="numeric"
+                maxlength="4"
+                autocomplete="new-password"
+                placeholder="4 dígitos"
+            >
+
+        </div>
+
+
+        <!-- CONFIRMAR PIN -->
+
+        <div
+            class="profile-field"
+            id="confirmPinField"
+        >
+
+            <label for="manageConfirmProfilePin">
+                Confirmar PIN
+            </label>
+
+            <input
+                id="manageConfirmProfilePin"
+                type="password"
+                inputmode="numeric"
+                maxlength="4"
+                autocomplete="new-password"
+                placeholder="Repetí el PIN"
+            >
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <p
+            class="profile-form-error"
+            id="pinManageError"
+            hidden
+        ></p>
+
+
+        <!-- ACCIONES -->
+
+        <div class="profile-pin-manage-actions">
+
+            <button
+                type="button"
+                class="profile-secondary-button"
+                id="closePinManageButton"
+            >
+                Cancelar
+            </button>
+
+            <button
+                type="button"
+                class="profile-primary-button"
+                id="savePinManageButton"
+            >
+                Guardar PIN
+            </button>
+
+        </div>
+
+
+        <!-- QUITAR PIN -->
+
+        <button
+            type="button"
+            class="profile-remove-pin-button"
+            id="removeProfilePinButton"
+            hidden
+        >
+            <span
+                class="material-symbols-rounded"
+                aria-hidden="true"
+            >
+                lock_open
+            </span>
+
+            <span>Quitar PIN</span>
+        </button>
+
+    </div>
+</div>
+
+        <!-- Agregar perfil -->
+        <button
+            class="add-profile-button"
+            id="addProfileButton"
+            type="button"
+        >
+            <span class="material-symbols-rounded" aria-hidden="true">
+                add
+            </span>
+
+            <span>Agregar perfil</span>
+        </button>
+
+    </div>
+
+<!-- =========================
+     MODAL CONFIRMAR QUITAR PIN
+     ========================= -->
+<div
+    class="profile-remove-pin-confirm-modal"
+    id="profileRemovePinConfirmModal"
+    hidden
+>
+    <div class="profile-remove-pin-confirm-box">
+
+        <div class="profile-modal-header">
+
+            <span
+                class="material-symbols-rounded profile-remove-pin-confirm-icon"
+                aria-hidden="true"
+            >
+                lock_open
+            </span>
+
+            <h2 id="removePinConfirmTitle">
+                Quitar PIN
+            </h2>
+
+            <p id="removePinConfirmDescription">
+                ¿Querés quitar el PIN de este perfil?
+            </p>
+
+        </div>
+
+        <div class="profile-remove-pin-confirm-actions">
+
+            <button
+                type="button"
+                class="profile-secondary-button"
+                id="cancelRemovePinButton"
+            >
+                Cancelar
+            </button>
+
+            <button
+                type="button"
+                class="profile-remove-pin-confirm-button"
+                id="confirmRemovePinButton"
+            >
+                <span
+                    class="material-symbols-rounded"
+                    aria-hidden="true"
+                >
+                    lock_open
+                </span>
+
+                <span>Quitar PIN</span>
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+
+    <!-- =========================
+         PANTALLA DE PIN
+         ========================= -->
+    <div
+        class="profile-pin-modal"
+        id="profilePinModal"
+        hidden
+    >
+
+        <div class="profile-pin-box">
+
+            <button
+                class="profile-modal-close"
+                id="closePinButton"
+                type="button"
+                aria-label="Cerrar"
+            >
+                <span class="material-symbols-rounded">
+                    close
+                </span>
+            </button>
+
+            <div
+                class="profile-pin-avatar"
+                id="pinProfileAvatar"
+            >
+                🦊
+            </div>
+
+            <h2 id="pinProfileName">
+                Perfil
+            </h2>
+
+            <p>
+                Este perfil está protegido con PIN.
+            </p>
+
+            <label
+                class="pin-input-label"
+                for="profilePinInput"
+            >
+                Ingresá tu PIN
+            </label>
+
+            <input
+                id="profilePinInput"
+                class="profile-pin-input"
+                type="password"
+                inputmode="numeric"
+                maxlength="4"
+                autocomplete="off"
+                placeholder="••••"
+            >
+
+            <p
+                class="pin-error"
+                id="pinError"
+                hidden
+            >
+                PIN incorrecto.
+            </p>
+
+            <button
+                class="profile-primary-button"
+                id="confirmPinButton"
+                type="button"
+            >
+                Entrar
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CREAR PERFIL
+         ========================= -->
+    <div
+        class="profile-create-modal"
+        id="profileCreateModal"
+        hidden
+    >
+
+        <div class="profile-create-box">
+
+            <button
+                class="profile-modal-close"
+                id="closeCreateProfileButton"
+                type="button"
+                aria-label="Cerrar"
+            >
+                <span class="material-symbols-rounded">
+                    close
+                </span>
+            </button>
+
+            <span class="eyebrow">
+                NUEVO PERFIL
+            </span>
+
+            <h2>
+                Crear perfil
+            </h2>
+
+            <div
+                class="profile-preview"
+                id="profilePreview"
+            >
+                🦊
+            </div>
+
+
+            <!-- Avatares -->
+            <div class="avatar-selector">
+
+                <span>
+                    Elegí un avatar
+                </span>
+
+                <div
+                    class="avatar-options"
+                    id="avatarOptions"
+                ></div>
+
+            </div>
+
+
+            <!-- Nombre -->
+            <label
+                class="profile-field"
+                for="profileNameInput"
+            >
+                <span>Nombre del perfil</span>
+
+                <input
+                    id="profileNameInput"
+                    type="text"
+                    maxlength="20"
+                    autocomplete="off"
+                    placeholder="Ej. Tomi"
+                >
+            </label>
+
+
+            <!-- PIN -->
+            <label class="pin-toggle">
+
+                <input
+                    type="checkbox"
+                    id="enablePinCheckbox"
+                >
+
+                <span class="pin-toggle-text">
+
+                    <strong>
+                        Bloquear con un PIN
+                    </strong>
+
+                    <small>
+                        Pedirá un PIN cada vez que ingreses a este perfil.
+                    </small>
+
+                </span>
+
+            </label>
+
+
+            <div
+                class="pin-creation-fields"
+                id="pinCreationFields"
+                hidden
+            >
+
+                <label class="profile-field">
+                    <span>PIN</span>
+
+                    <input
+                        id="newProfilePin"
+                        type="password"
+                        inputmode="numeric"
+                        maxlength="4"
+                        autocomplete="new-password"
+                        placeholder="4 dígitos"
+                    >
+                </label>
+
+                <label class="profile-field">
+                    <span>Confirmar PIN</span>
+
+                    <input
+                        id="confirmProfilePin"
+                        type="password"
+                        inputmode="numeric"
+                        maxlength="4"
+                        autocomplete="new-password"
+                        placeholder="Repetí el PIN"
+                    >
+                </label>
+
+                <p
+                    class="profile-form-error"
+                    id="profileFormError"
+                    hidden
+                ></p>
+
+            </div>
+
+
+            <button
+                class="profile-primary-button"
+                id="createProfileButton"
+                type="button"
+            >
+                Crear perfil
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+    <script src="js/movies.js"></script>
+    <script src="js/series.js"></script>
+    <script src="js/profiles.js"></script>
+    <script src="js/accounts.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
